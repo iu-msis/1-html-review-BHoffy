@@ -1,0 +1,36 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: powderblue;
+}
+
+.container {
+    width: 1000px;
+    margin: 35px auto;
+    border-top: 4px solid black;
+    border-bottom: 4px solid black;
+    padding:30px;
+    background-color: cornsilk;
+}
+
+h1, h2, h3 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.2em;
+    margin-top: 20px;
+    ;
+}
+
+p, td, li {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.5em;
+}
+img {
+    width: 100%;
+    display: block;
+}
