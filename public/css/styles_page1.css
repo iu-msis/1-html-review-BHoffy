@@ -11,7 +11,7 @@ body {
 }
 
 .container {
-    width: 1000px;
+    width: 100%;
     margin: 35px auto;
     border-top: 4px solid black;
     border-bottom: 4px solid black;
@@ -24,6 +24,7 @@ h1, h2, h3 {
     line-height: 1.2em;
     margin-top: 20px;
     color: dimgray;
+    
 }
 
 p, td, li {
@@ -47,11 +48,6 @@ a:link, a:visited {
     border-bottom: 2px dotted #EFEBE9;
 }
 
-#name {
-    color: crimson;
-    text-shadow: black;
-    text-transform: uppercase;
+.form {
+    margin-top: auto;
 }
-
-
-
