@@ -1,0 +1,53 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: powderblue;
+}
+
+.container {
+    width: 100%;
+    margin: 35px auto;
+    border-top: 4px solid black;
+    border-bottom: 4px solid black;
+    padding:30px;
+    background-color: cornsilk;
+}
+
+h1, h2, h3 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.2em;
+    margin-top: 20px;
+    color: dimgray;
+    
+}
+
+p, td, li {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.5em;
+    color:lightslategray;
+}
+img {
+    width: 100%;
+    display: block;
+}
+
+a:active, a:hover {
+    color: #5ea021;
+    border-bottom: none;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    color: #08318a;
+    border-bottom: 2px dotted #EFEBE9;
+}
+
+.form {
+    margin-top: auto;
+}

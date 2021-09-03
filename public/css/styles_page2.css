@@ -1,0 +1,70 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: powderblue;
+}
+
+.container {
+    width: 100%;
+    margin: 35px auto;
+    border-top: 4px solid black;
+    border-bottom: 4px solid black;
+    padding:30px;
+    background-color: cornsilk;
+}
+
+h2, h3 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.2em;
+    margin-top: 20px;
+    color: darkblue;
+    text-align: center;
+    
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 60px;
+    color: darkblue;
+    margin-top: 20px;
+    text-align: center;
+    
+}
+
+p, td, li {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.5em;
+    color:black;
+}
+img {
+    width: 40%;
+    height: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+a:active, a:hover {
+    color: #a8332b;
+    border-bottom: none;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    color: #0ed159;
+    border-bottom: 2px dotted #EFEBE9;
+}
+
+.form {
+    margin-top: auto;
+}
+
+figcaption {
+    text-align: center;
+}
