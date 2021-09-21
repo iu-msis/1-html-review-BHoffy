@@ -37,6 +37,7 @@ const Offer = {
                 console.log(responseJson);
                 console.log("C");
                 this.person = responseJson.results[0];
+                this.largeimage = responseJson.picture.large;
             })
             .catch( (err) => {
                 console.error(err);
@@ -46,8 +47,8 @@ const Offer = {
     },
     created() {
         this.fetchUserData();
-    } //end created
-} // end Offer config
+    } 
+} 
   
 Vue.createApp(Offer).mount('#offerApp');
 console.log("Z");

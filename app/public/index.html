@@ -4,8 +4,10 @@
 <head>
   <meta charset="utf-8">
   <title>Detroit Tigers</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
   <link rel="stylesheet" href="css/styles.css">
+  <script src="https://unpkg.com/vue@next"></script>
+  
 </head>
 
 <body>
@@ -18,13 +20,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="index.html">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="table.html">Book Data</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="favbook.html">Movie Favorite Movie</a>
+          <a class="nav-link" href="favmovie.html">My Favorite Movie</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
@@ -35,14 +37,19 @@
   </nav>
   
   <div class="container">
-    <a href="https://apnews.com/article/sports-mlb-detroit-tigers-san-diego-padres-st-louis-cardinals-a51504affe4c60e74471399dfbc5deb9"><img src="img/miggy.jpeg"></a> <!-- Source: https://apnews.com/article/sports-mlb-detroit-tigers-san-diego-padres-st-louis-cardinals-a51504affe4c60e74471399dfbc5deb9-->
-    <figcaption>Image attained from AP News</figcaption>
-    <h1 id="name">Name: Miguel Cabrera</h1>
-    <h2>Country of Origin: Dominican Republic</h2>
-    <h2>Birthdate: May 29th, 1969</h2>
-    <h2>Age: 21</h2>
-    <h2>Email: thegoat@gmail.com</h2>
-    <h3><a href="mailto: thegoat@gmail.com">Send Miggy an Email</a></h3>
+    <div id="offerApp">
+    <a target="_blank" v-bind:href="person.picture.large"><img v-bind:src="person.picture.thumbnail" alt = "Picture of Judith Wright" class="rounded-circle" height="200" width="200"></a>
+    <h1>{{person.name.first}} {{person.name.last}}</h1>
+    <h2>{{person.location.state}}, {{person.location.country}}</h2>
+    <h2>Date of birth: {{prettyBirthday}}</h2>
+    <h2>Age: {{person.dob.age}}</h2>
+    <h2>Email: <a href="mailto:example.com" id="email">{{person.email}}</a></h2>
+    
+
+
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script src="js/index.js"></script>
+    </div>
   </div>
 </body>
 </html>
