@@ -38,7 +38,7 @@
   
   <div class="container">
     <div id="offerApp">
-    <a target="_blank" v-bind:href="person.picture.large"><img v-bind:src="person.picture.thumbnail" alt = "Picture of Judith Wright" class="rounded-circle" height="200" width="200"></a>
+    <a target="_blank" v-bind:href="person.picture.large"><img v-bind:src="person.picture.large" alt = "Picture of Judith Wright" class="rounded-circle" height="200" width="200"></a>
     <h1>{{person.name.first}} {{person.name.last}}</h1>
     <h2>{{person.location.state}}, {{person.location.country}}</h2>
     <h2>Date of birth: {{prettyBirthday}}</h2>

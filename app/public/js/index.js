@@ -36,8 +36,7 @@ const Offer = {
             .then( (responseJson) => {
                 console.log(responseJson);
                 console.log("C");
-                this.person = responseJson.results[0];
-                this.largeimage = responseJson.picture.large;
+                this.person = responseJson.results[0]
             })
             .catch( (err) => {
                 console.error(err);
