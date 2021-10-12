@@ -1,16 +1,8 @@
 const SomeApp = {
     data() {
       return {
-      "books": {
-            booktitle: {},
-            authorname: {},
-            publicationyear: {},
-            publishername: {},
-            pagecount: {},
-            msrp: {},
-      }
-
-      }
+      books: [],
+            }
     },
     computed: {},
     methods: {
