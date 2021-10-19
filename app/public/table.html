@@ -9,7 +9,8 @@
   <!--<script src="https://unpkg.com/vue@next"></script>-->
   
   
-  <script src="https://unpkg.com/vue@3.0.5"></script>
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"> </script>
 
   <link rel="stylesheet" href="css/styles_table.css">
   
@@ -124,62 +125,57 @@
 
 
       </table>
-    </div>
+    
 
-    <form id="form">
-        <div class="form-group row">
-          <label for="inputEmail3" class="col-sm-2 col-form-label">Title</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputEmail3">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="inputPassword3" class="col-sm-2 col-form-label">Author(s)</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputPassword3">
-          </div>
-        </div>
-        <div class="form-group row">
-            <label for="inputPassword3" class="col-sm-2 col-form-label">Publication Year</label>
-            <div class="col-sm-10">
-              <input type="number" class="form-control" id="inputPassword3">
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="inputPassword3" class="col-sm-2 col-form-label">Publisher</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="inputPassword3">
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="inputPassword3" class="col-sm-2 col-form-label">Page Count</label>
-            <div class="col-sm-10">
-              <input type="number" class="form-control" id="inputPassword3">
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="inputPassword3" class="col-sm-2 col-form-label">MSRP</label>
-            <div class="col-sm-10">
-              <input type="number" class="form-control" id="inputPassword3" step="any">
-            </div>
-        </div>
-        
-        
-        <div class="form-group row">
-          <div class="col-sm-10">
-            <button type="submit" class="btn btn-primary">Add Book</button>
-          </div>
-        </div>
+    <form v-on:submit.prevent="postNewBook">
+      <div class="mb-3">
+        <label for="title" class="form-label">Book Title</label>
+        <input type="text" v-model="bookForm.Title" class="form-control" id="Title">
+      </div>
+
+      <div class="mb-3">
+        <label for="author" class="form-label">Author</label>
+        <input  type="text" v-model="bookForm.Author" class="form-control" id="Author">
+      </div>
+
+      <div class="mb-3">
+        <label for="yearPublished" class="form-label">Year Published</label>
+        <input type="date" v-model="bookForm.YearPublished" class="form-control" id="YearPublished">
+      </div>
+      <div class="mb-3">
+        <label for="publisher" class="form-label">Publisher</label>
+        <input type="text" v-model="bookForm.Publisher" class="form-control" id="Publisher">
+      </div>
+      <div class="mb-3">
+        <label for="pageCount" class="form-label">Page Count</label>
+        <input type="number" v-model="bookForm.PageCount" class="form-control" id="PageCount">
+      </div>
+      <div class="mb-3">
+        <label for="msrp" class="form-label">MSRP</label>
+        <input type="number" v-model="bookForm.MSRP" class="form-control" id="MSRP">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit Book</button>
+      
+      
+
+    
+    
+
+    
+
+
     </form>
+    </div>
+    
     
   </div>
 
   
 
   
-  
-  <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
   
   <script src="js/tablesort.min.js"></script>
   <script src="js/books.js"></script>
