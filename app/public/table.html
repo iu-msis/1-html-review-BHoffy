@@ -113,7 +113,7 @@
               <td>{{ book.YearPublished }}</td>
               <td>{{ book.Publisher }}</td>
               <td>{{ book.PageCount }}</td>
-              <td>{{ book.MSRP }}</td>
+              <td>{{ prettyDollar(book.MSRP) }}</td>
             </tr>
           </tbody>
           
@@ -140,7 +140,7 @@
 
       <div class="mb-3">
         <label for="yearPublished" class="form-label">Year Published</label>
-        <input type="date" v-model="bookForm.YearPublished" class="form-control" id="YearPublished">
+        <input type="number" v-model="bookForm.YearPublished" class="form-control" id="YearPublished">
       </div>
       <div class="mb-3">
         <label for="publisher" class="form-label">Publisher</label>
@@ -155,7 +155,7 @@
         <input type="number" v-model="bookForm.MSRP" class="form-control" id="MSRP">
       </div>
 
-      <button type="submit" class="btn btn-primary">Submit Book</button>
+      <button type="submit" class="btn btn-primary">Add Book</button>
       
       
 

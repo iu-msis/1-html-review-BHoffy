@@ -1,13 +1,16 @@
 const SomeApp = {
     data() {
-      return {
-      books: [],
-      selectedBook: null,
-      bookForm: {}
+        return {
+        books: [],
+        bookForm: {}
         }
     },
     computed: {},
     methods: {
+        prettyDollar(n) {
+            const d = new Intl.NumberFormat("en-US").format(n);
+            return "$ " + d;
+        },
         fetchBooksData() {
             //console.log("Fetching offer data for ", s);
             fetch('/api/books/index.php')
@@ -35,21 +38,21 @@ const SomeApp = {
                   "Content-Type": "application/json; charset=utf-8"
                 }
               })
-              .then( response => response.json() )
-              .then( json => {
+                .then( response => response.json() )
+                .then( json => {
                 console.log("Returned from post:", json);
                 // TODO: test a result was returned!
                 this.books = json;
                 
                 // reset the form
                 this.bookForm = {};
-              });
-          }
-      },
-      created() {
+                });
+        }
+    },
+    created() {
           this.fetchBooksData();
-      }
-    
     }
     
-    Vue.createApp(SomeApp).mount('#bookApp');
+}
+
+Vue.createApp(SomeApp).mount('#bookApp');
