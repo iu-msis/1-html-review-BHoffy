@@ -120,7 +120,7 @@
                   class="btn btn-outline-secondary btn-sm"
                   v-on:click="selectBookToEdit(book)">Edit</button>
                 <button type="button" class="btn btn-outline-secondary btn-sm"
-                  v-on:click="postDeleteOffer(offer)">Delete</button>
+                  v-on:click="postDeleteBook(book)">Delete</button>
               </td>
             </tr>
           </tbody>
@@ -134,38 +134,38 @@
 
       </table>
     
+      <h3>{{ selectedBook === null ? "Add " : "Edit " }} Book</h3>
+        <form v-on:submit.prevent="postBook">
+          <div class="mb-3">
+            <label for="title" class="form-label">Book Title</label>
+            <input type="text" v-model="bookForm.Title" class="form-control" id="Title">
+          </div>
 
-    <form v-on:submit.prevent="postNewBook">
-      <div class="mb-3">
-        <label for="title" class="form-label">Book Title</label>
-        <input type="text" v-model="bookForm.Title" class="form-control" id="Title">
-      </div>
+          <div class="mb-3">
+            <label for="author" class="form-label">Author</label>
+            <input  type="text" v-model="bookForm.Author" class="form-control" id="Author">
+          </div>
 
-      <div class="mb-3">
-        <label for="author" class="form-label">Author</label>
-        <input  type="text" v-model="bookForm.Author" class="form-control" id="Author">
-      </div>
+          <div class="mb-3">
+            <label for="yearPublished" class="form-label">Year Published</label>
+            <input type="number" v-model="bookForm.YearPublished" class="form-control" id="YearPublished">
+          </div>
+          <div class="mb-3">
+            <label for="publisher" class="form-label">Publisher</label>
+            <input type="text" v-model="bookForm.Publisher" class="form-control" id="Publisher">
+          </div>
+          <div class="mb-3">
+            <label for="pageCount" class="form-label">Page Count</label>
+            <input type="number" v-model="bookForm.PageCount" class="form-control" id="PageCount">
+          </div>
+          <div class="mb-3">
+            <label for="msrp" class="form-label">MSRP</label>
+            <input type="number" v-model="bookForm.MSRP" class="form-control" id="MSRP">
+          </div>
+          <button type="submit" class="btn btn-primary">{{ selectedBook === null ? "Add " : "Edit " }} Book</button>
+          <button type="button" class="btn btn-outline-secondary" v-if="selectedBook" v-on:click="resetBookForm">Cancel</button>
 
-      <div class="mb-3">
-        <label for="yearPublished" class="form-label">Year Published</label>
-        <input type="number" v-model="bookForm.YearPublished" class="form-control" id="YearPublished">
-      </div>
-      <div class="mb-3">
-        <label for="publisher" class="form-label">Publisher</label>
-        <input type="text" v-model="bookForm.Publisher" class="form-control" id="Publisher">
-      </div>
-      <div class="mb-3">
-        <label for="pageCount" class="form-label">Page Count</label>
-        <input type="number" v-model="bookForm.PageCount" class="form-control" id="PageCount">
-      </div>
-      <div class="mb-3">
-        <label for="msrp" class="form-label">MSRP</label>
-        <input type="number" v-model="bookForm.MSRP" class="form-control" id="MSRP">
-      </div>
-      <button type="submit" class="btn btn-primary">{{ selectedBook === null ? "Add " : "Edit " }} Offer</button>
-      <button type="button" class="btn btn-outline-secondary" v-if="selectedBook" v-on:click="resetBookForm">Cancel</button>
-
-      <button type="submit" class="btn btn-primary">Add Book</button>
+          <!--<button type="submit" class="btn btn-primary">Add Book</button>-->
       
       
 
@@ -175,7 +175,7 @@
     
 
 
-    </form>
+        </form>
     </div>
     
     

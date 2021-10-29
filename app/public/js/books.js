@@ -1,9 +1,9 @@
 const SomeApp = {
     data() {
         return {
-        books: [],
-        bookForm: {},
-        selectedBook: null
+            books: [],
+            bookForm: {},
+            selectedBook: null
         }
     },
     computed: {},
@@ -17,8 +17,8 @@ const SomeApp = {
                 return;
             }
             this.selectedBook = b;
-            this.books = [];
-            this.fetchBooksData(this.selectedBook);
+            //this.books = [];
+            //this.fetchBooksData(this.selectedBook);
         },
         fetchBooksData() {
             //console.log("Fetching offer data for ", s);
@@ -35,11 +35,12 @@ const SomeApp = {
                 console.error(error);
             });
         },
-        postOffer(evt) {
-            if (this.selectedBook === null) {
-                this.postNewBook(evt);
-            } else {
+        postBook(evt) {
+            console.log ("Test:", this.selectedBook)
+            if (this.selectedBook) {
                 this.postEditBook(evt);
+            } else {
+                this.postNewBook(evt);
             }
         },
         postNewBook(evt) {
@@ -64,7 +65,7 @@ const SomeApp = {
                 this.bookForm = {};
                 });
         },
-        postEditOffer(evt) {
+        postEditBook(evt) {
             this.bookForm.id = this.selectedBook.id;
             //this.bookForm.id = this.selectedBook.id;
     
@@ -87,8 +88,32 @@ const SomeApp = {
                 this.resetBookForm();
               });
         },
-        selectBookToEdit(o) {
-            this.selectedBook = o;
+        postDeleteBook(b) {  
+            if ( !confirm("Are you sure you want to delete the book " + b.Title + "?") ) {
+                return;
+            }  
+            
+            console.log("Delete!", b);
+    
+            fetch('api/books/delete.php', {
+                method:'POST',
+                body: JSON.stringify(b),
+                headers: {
+                  "Content-Type": "application/json; charset=utf-8"
+                }
+              })
+              .then( response => response.json() )
+              .then( json => {
+                console.log("Returned from post:", json);
+                // TODO: test a result was returned!
+                this.books = json;
+                
+                // reset the form
+                this.resetBookForm();
+              });
+        },
+        selectBookToEdit(book) {
+            this.selectedBook = book;
             this.bookForm = Object.assign({}, this.selectedBook);
         },
         resetBookForm() {

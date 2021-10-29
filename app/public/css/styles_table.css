@@ -15,8 +15,8 @@ body {
     margin: 35px auto;
     border-top: 4px solid black;
     border-bottom: 4px solid black;
-    border-left: dotted black 7px ;
-    border-right: dotted black 7px;
+    border-left: solid green 7px ;
+    border-right: solid green 7px;
     padding:30px;
     background-color: navajowhite;
 }

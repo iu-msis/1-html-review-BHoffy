@@ -31,23 +31,10 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
 $stmt = $db->prepare(
-  'UPDATE books SET
-    Title = ?,
-    Author = ?,
-    YearPublished = ?,
-    Publisher = ?,
-    PageCount = ?,
-    MSRP = ?
-  WHERE id = ?'
+  'DELETE FROM books WHERE id = ?'
 );
 
 $stmt->execute([
-  $_POST['Title'],
-  $_POST['Author'],
-  $_POST['YearPublished'],
-  $_POST['Publisher'],
-  $_POST['PageCount'],
-  $_POST['MSRP'],
   $_POST['id']
 ]);
 
